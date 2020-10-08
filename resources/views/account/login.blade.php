@@ -39,6 +39,8 @@
             </ul>
         </div>
         </nav>
+        <hr>
+
 
 
         <div class = "container" style="text-align:center;">
@@ -54,7 +56,7 @@
                         <div class = "username">
                             <br>
                             <p id="errors_username" style="color:red;"></p>
-                            <input type = "text" name = "username" id = "username" placeholder = "Enter the username"  data-toggle="tooltip" data-placement="bottom" title="Enter the username" style="border-radius:10px;width:70%;border-color:#0275d8;">
+                            <input type = "text" name = "email" id = "username" placeholder = "Enter the username"  data-toggle="tooltip" data-placement="bottom" title="Enter the username" style="border-radius:10px;width:70%;border-color:#0275d8;">
                             <br>
                         </div>
                         <div class = "password">

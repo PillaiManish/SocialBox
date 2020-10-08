@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\FriendController;
 
 
 /*
@@ -16,10 +17,16 @@ use App\Http\Controllers\AccountController;
 |
 */
 
-Route::get('/',[BasicController::class,'index'])->middleware('auth');
+Route::get('/',[BasicController::class,'index'])->middleware('auth')->name('home');
 
-Route::get('/login',[AccountController::class,'get_login'])->name('login');
+Route::get('/login',[AccountController::class,'get_login'])->name('login')->middleware('guest');
 Route::post('/login',[AccountController::class,'post_login']);
 
-Route::get('/register',[AccountController::class,'get_register']);
+Route::get('/register',[AccountController::class,'get_register'])->middleware('guest');
 Route::post('/register',[AccountController::class,'post_register']);
+
+Route::get('/logout',[AccountController::Class,'get_logout'])->middleware('auth');
+
+
+Route::get('/friend',[FriendController::Class,'get_friend']);
+Route::get('/findfriend',[FriendController::Class,'get_newfriend']);

@@ -25,7 +25,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
 
@@ -42,7 +42,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">My Post</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  active">
                 <a class="nav-link" href="/">Friends</a>
             </li>
             <li class="nav-item">
@@ -52,7 +52,41 @@
             </ul>
         </div>
         </nav>
+
         <hr>
+
+ 
+        <div class = "container" style="color:black;">
+            <div class = "container">
+            <a href="/findfriends" style="color:#0275d8">Find More Friends</a>
+            <br>
+            <br>
+
+                <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
+                    <p>My Friends</p>
+                    <hr>
+
+                    @foreach($friends as $friend)
+                    <div class = "container border border-primary" style="overflow:auto;border-radius:15px;border-color:#0275d8;">
+                        <div class = "dp" style="float:left;">
+                            <p>DSD</p>
+                        </div>
+                        <div class = "name" style="float:right;clear:both;">
+                            <p>{{$friend->name}}
+                        </div>
+                        <br>
+
+                        <div class = "email" style="float:right;clear:both;">
+                            <p>{{$friend->email}}
+                        </div>
+                    </div>
+                    <br>
+                    @endforeach
+
+                </div>
+            </div>
+
+        </div>
 
 
         </script>
