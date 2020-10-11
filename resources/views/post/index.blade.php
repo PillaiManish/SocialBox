@@ -39,10 +39,10 @@
                 </a>
             </li>
             @else
-            <li class="nav-item">
+            <li class="nav-item  active">
                 <a class="nav-link" href="/">My Post</a>
             </li>
-            <li class="nav-item  active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">Friends</a>
             </li>
             <li class="nav-item">
@@ -56,41 +56,65 @@
         <hr>
 
  
-        <div class = "container" style="color:black;">
-            <div class = "container">
-            <a value="Find More Friends"  href = "/findfriend" style="color:#0275d8">Find More Friends</a>
-            <hr>
-            
-            <br>
-
-                <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
-                    <p>My Friends</p>
-                    <hr>
-
-                    @foreach($friends as $friend)
-                    <div class = "container border border-primary" style="overflow:auto;border-radius:15px;border-color:#0275d8;">
-                        <div class = "dp" style="float:left;">
-                            <p>Profile Picture</p>
-                        </div>
-                        <div class = "name" style="float:right;clear:both;">
-                            <p>{{$friend->name}}</p>
-                        </div>
+ 
+<div class = "container" style="color:black;">
+    <div class = "container">
+    <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
+    <form method = 'POST'>
+    @csrf
+                <br>
+        <a value="Find More Friends" style="color:#0275d8">NEW POST</a>
+                <br><br>
+                <input type = "text" name = "title" placeholder = "Enter the Title" style="border-radius:10px;width:70%;border-color:#0275d8;">
+                <br><br>
+                <textarea name = "content" placeholder = "Enter the Content" style="border-radius:10px;width:70%;border-color:#0275d8;"></textarea>
+                <br>
+                <div class = "submit">
                         <br>
-
-                        <div class = "email" style="float:right;clear:both;">
-                            <p>{{$friend->email}}</p>
-                        </div>
-                        <br>
-
+                        <input type = "submit" id = "submit" value = "Add" style = "border-radius:10px;border-color:#0275d8;width:25%;">
                     </div>
-                    <br>
+    </form>
 
-                    @endforeach
+    </div>
+    
+    <hr>
+
+    
+    <br>
+
+        <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
+            <p>My Post</p>
+            <hr>
+
+
+            @foreach($posts as $post)
+            <div class = "container border border-primary" style="overflow:auto;border-radius:15px;border-color:#0275d8;">
+                <div class = "title" style="float:left;clear:both;">
+                    <p>{{$post->title}}</p>
+                </div>
+
+                <div class = "date" style="float:right;">
+                    <p>{{$post->created_at}}</p>
+                </div>
+                <br>
+
+                <div class = "contents" style="float:left;clear:both;">
+                    <p>{{$post->content}}</p>
 
                 </div>
+                <br>
+
             </div>
+            <br>
+
+            @endforeach
 
         </div>
+    </div>
+
+</div>
+
+
 
 
         </script>

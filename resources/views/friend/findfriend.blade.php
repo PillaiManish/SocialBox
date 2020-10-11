@@ -58,13 +58,12 @@
  
         <div class = "container" style="color:black;">
             <div class = "container">
-            <a value="Find More Friends"  href = "/findfriend" style="color:#0275d8">Find More Friends</a>
+            <a href="/friend" style="color:#0275d8">My Friends</a>
             <hr>
-            
             <br>
 
                 <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
-                    <p>My Friends</p>
+                    <p>Find Friends</p>
                     <hr>
 
                     @foreach($friends as $friend)
@@ -73,18 +72,17 @@
                             <p>Profile Picture</p>
                         </div>
                         <div class = "name" style="float:right;clear:both;">
-                            <p>{{$friend->name}}</p>
+                            <p>{{$friend->name}}
                         </div>
                         <br>
 
                         <div class = "email" style="float:right;clear:both;">
-                            <p>{{$friend->email}}</p>
+                            <p>{{$friend->email}}
                         </div>
                         <br>
-
+                    <a href="/sendrequest/{{$friend->id}}" name = "send_request" value="Send Request" style="border-radius:15px;background-color:white;border-color:#0275d8;color:#0275d8">Send Request</a>
                     </div>
                     <br>
-
                     @endforeach
 
                 </div>
