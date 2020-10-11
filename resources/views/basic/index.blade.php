@@ -54,6 +54,62 @@
         </nav>
         <hr>
 
+        <div class = "container border border-primary" style="border-radius:15px;border-color:#0275d8;">
+            <p>Latest Post</p>
+            <hr>
+
+
+            @foreach($posts as $post)
+            <div class = "container border border-primary" style="overflow:auto;border-radius:15px;border-color:#0275d8;">
+                <div class = "owner">
+                    <p>{{$post->user->name}}</p>
+                </div>
+                
+                <div class = "title" style="float:left;clear:both;">
+                    <p>{{$post->title}}</p>
+                </div>
+
+                <div class = "date" style="float:right;">
+                    <p>{{$post->created_at}}</p>
+                </div>
+                <br>
+
+                <div class = "contents" style="float:left;clear:both;">
+                    <p>{{$post->content}}</p>
+
+                </div>
+                <br>
+
+            </div>
+            <br>
+
+            @endforeach
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </script>
         <!-- JS, Popper.js, and jQuery -->

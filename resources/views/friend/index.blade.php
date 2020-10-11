@@ -73,12 +73,12 @@
                             <p>Profile Picture</p>
                         </div>
                         <div class = "name" style="float:right;clear:both;">
-                            <p>{{$friend->name}}</p>
+                            <p>{{$friend->user->name}}</p>
                         </div>
                         <br>
 
                         <div class = "email" style="float:right;clear:both;">
-                            <p>{{$friend->email}}</p>
+                            <p>{{$friend->user->email}}</p>
                         </div>
                         <br>
 

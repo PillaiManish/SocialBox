@@ -36,4 +36,6 @@ Route::get('sendrequest/{id}',[FriendController::Class,'get_sendrequest']);
 Route::get('acceptrequest/{id}',[FriendController::Class,'get_acceptrequest']);
 
 Route::get('post',[PostController::Class,'get_post']);
+Route::post('post',[PostController::Class,'post_post']);
+
 
